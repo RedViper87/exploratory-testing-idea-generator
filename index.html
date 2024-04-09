@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exploratory Testing Idea Generator</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1e1e1e;
+}
+.container {
+    text-align: center;
+}
+.grid-container {
+    display: grid;
+    grid-auto-flow: row;
+}
+.boxed-div {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px auto 0 auto;
+    background-color: white;
+    width: 300px;
+    height: auto; /* Set height to auto to allow content to expand */
+    word-wrap: break-word; /* Allow words to wrap */
+    white-space: pre-line; /* Preserve newline characters */
+}
+.description {
+    text-align: left;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px auto;
+    background-color: white;
+    width: 200px;
+    height: 100px;
+    overflow-y: auto;
+}
+h1 {
+    margin-bottom: 20px;
+    color: greenyellow;
+}
+button {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 5px;
+    cursor: pointer;
+    width: 200px;
+    background-color: lightskyblue;
+}
+.result {
+    margin-top: 10px;
+}
+.small-heading {
+    font-weight: 900;
+}
+#item1 {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+#item2 {
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+#item3 {
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+#item4 {
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+</style>
+</head>
+<body>
+
+
+<div class="container">
+    <h1>Exploratory Testing Idea Generator</h1>
+    <button onclick="generateRandomTopic('e', ['Structure', 'Function', 'Data', 'Platform', 'Operations', 'Time'], 'topicResult1'), generateRandomTopic('c', ['Capability', 'Reliability', 'Usability', 'Charisma', 'Security', 'Performance', 'IT-bility', 'Compatibility', 'Supportability', 'Testability', 'Maintainability', 'Portability'], 'topicResult2')">Generate Idea</button>
+    <button onclick="clearResults()">Clear Results</button>
+    <div class="grid-container">
+        <div class="boxed-div" id="item1">
+            <p class="small-heading">Product Element to Test:</p>
+            <p id="topicResult1" class="result"></p>
+        </div>
+        <div class="boxed-div" id="item2">
+            <p class="small-heading">Software Quality Characteristic:</p>
+            <p id="topicResult2" class="result"></p>
+        </div>
+        <div class="boxed-div" id="item3">
+            <p id="descriptionTextE"></p>
+        </div>
+        <div class="boxed-div" id="item4">
+            <p id="descriptionTextC"></p>
+        </div>
+    </div>
+</div>
+
+
+<script>
+function generateRandomTopic(type, array, resultId) {
+    var min = 1;
+    var max = array.length;
+    var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    var resultElement = document.getElementById(resultId);
+    resultElement.style.fontWeight = "bold";
+
+    if (type == 'e') {
+        var descriptionText = document.getElementById('descriptionTextE');
+        resultElement.textContent = array[randomNumber - 1]; // Adjusting index since array is zero-based
+        setElementDescription(array[randomNumber - 1]);
+    }
+
+    if (type == 'c') {
+        var descriptionText = document.getElementById('descriptionTextC');
+        resultElement.textContent = array[randomNumber - 1]; // Adjusting index since array is zero-based
+        setCharacteristicDescription(array[randomNumber - 1]);
+    }
+}
+
+function setElementDescription(element) {
+    var descriptions = {
+        'Structure': 'Everything that comprises the physical product.',
+        'Function': 'Everything that the product does.',
+        'Data': 'Everything that the product processes and produces.',
+        'Platform': 'Everything on which the product depends (and that is outside your project).',
+        'Operations': 'How the product will be used.',
+        'Time': 'Any relationship between the product and time.'
+    };
+    var description = descriptions[element];
+    var descriptionText = document.getElementById('descriptionTextE');
+    descriptionText.textContent = description;
+}
+
+function setCharacteristicDescription(characteristic) {
+    var descriptions = {
+        'Capability': {
+            desc: 'Can the product perform valuable functions?',
+            item1: 'Completeness: all important functions wanted by end users are available.',
+            item2: 'Accuracy: any output or calculation in the product is correct and presented with significant digits.',
+            item3: 'Efficiency: performs its actions in an efficient manner (without doing what it\'s not supposed to do.)',
+            item4: 'Interoperability: different features interact with each other in the best way.',
+            item5: 'Concurrency: ability to perform multiple parallel tasks, and run at the same time as other processes.',
+            item6: 'Data agnosticism: supports all possible data formats, and handles noise.',
+            item7: 'Extensibility: ability for customers or 3rd parties to add features or change behavior.'
+        },
+        'Reliability': {
+            desc: 'DESCRIPTION TEST',
+            item1: 'ITEM TEST'
+        },
+        'Usability': {
+            desc: 'DESCRIPTION TEST',
+            item1: 'ITEM TEST'
+        },
+        'Charisma': {
+            desc: 'DESCRIPTION TEST',
+            item1: 'ITEM TEST'
+        },
+        'Security': {
+            desc: 'DESCRIPTION TEST',
+            item1: 'ITEM TEST'
+        },
+        'Performance': {
+            desc: 'DESCRIPTION TEST',
+            item1: 'ITEM TEST'
+        },
+        'IT-bility': {
+            desc: 'DESCRIPTION TEST',
+            item1: 'ITEM TEST'
+        },
+        'Compatibility': {
+            desc: 'DESCRIPTION TEST',
+            item1: 'ITEM TEST'
+        },
+        'Supportability': {
+            desc: 'DESCRIPTION TEST',
+            item1: 'ITEM TEST'
+        },
+        'Testability': {
+            desc: 'DESCRIPTION TEST',
+            item1: 'ITEM TEST'
+        },
+        'Maintainability': {
+            desc: 'DESCRIPTION TEST',
+            item1: 'ITEM TEST'
+        },
+        'Portability': {
+            desc: 'DESCRIPTION TEST',
+            item1: 'ITEM TEST'
+        },
+    };
+    var description = descriptions[characteristic];
+    var descriptionText = document.getElementById('descriptionTextC');
+    descriptionText.textContent = '';
+    for (var key in description) {
+        if (description.hasOwnProperty(key)) {
+            // Append each key'svalue to the descriptionText element
+            descriptionText.textContent += description[key] + '\n';
+        }
+    }
+}
+
+
+function clearResults() {
+    document.getElementById('topicResult1').textContent = '';
+    document.getElementById('topicResult2').textContent = '';
+    document.getElementById('descriptionTextE').textContent = '';
+    document.getElementById('descriptionTextC').textContent = '';
+}
+
+</script>
+
+</body>
+</html>
+
+ 
