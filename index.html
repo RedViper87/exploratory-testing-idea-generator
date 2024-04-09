@@ -203,146 +203,146 @@ function setElementDescription(element) {
 
 function setCharacteristicDescription(characteristic) {
     // Characteristic Descriptions
-var characteristicDescriptions = {
-    'Capability': {
-        desc: 'Can the product perform valuable functions?',
-        item1: 'Completeness: all important functions wanted by end users are available.',
-        item2: 'Accuracy: any output or calculation in the product is correct and presented with significant digits.',
-        item3: 'Efficiency: performs its actions in an efficient manner (without doing what it\'s not supposed to do.)',
-        item4: 'Interoperability: different features interact with each other in the best way.',
-        item5: 'Concurrency: ability to perform multiple parallel tasks, and run at the same time as other processes.',
-        item6: 'Data agnosticism: supports all possible data formats, and handles noise.',
-        item7: 'Extensibility: ability for customers or 3rd parties to add features or change behavior.'
-    },
-    'Reliability': {
-        desc: 'Can you trust the product in many and difficult situations?',
-        item1: 'Stability: the product shouldn\'t cause crashes, unhandled exceptions or script errors.',
-        item2: 'Robustness: the product handles foreseen and unforeseen errors gracefully.',
-        item3: 'Stress handling: how does the system cope when exceeding various limits?',
-        item4: 'Recoverability: it is possible to recover and continue using the product after a fatal error.',
-        item5: 'Data Integrity: all types of data remain intact throughout the product.',
-        item6: 'Safety: the product will not be part of damaging people or possessions.',
-        item7: 'Disaster Recovery: what if something really, really bad happens?',
-        item8: 'Trustworthiness: is the product\'s behavior consistent, predictable, and trustworthy?'
-    },
-    'Usability': {
-        desc: 'Is the product easy to use?',
-        item1: 'Affordance: product invites to discover possibilities of the product.',
-        item2: 'Intuitiveness: it is easy to understand and explain what the product can do.',
-        item3: 'Minimalism: there is nothing redundant about the product\'s content or appearance.',
-        item4: 'Learnability: it is fast and easy to learn how to use the product.',
-        item5: 'Memorability: once you have learnt how to do something you don\'t forget it.',
-        item6: 'Discoverability: the product\'s information and capabilities can be discovered by exploration of the user interface.',
-        item7: 'Operability: an experienced user can perform common actions very fast.',
-        item8: 'Interactivity: the product has easy-to-understand states and possibilities of interacting with the application (via GUI or API).',
-        item9: 'Control: the user should feel in control over the proceedings of the software.',
-        item10: 'Clarity: is everything stated explicitly and in detail, with a language that can be understood, leaving no room for doubt?',
-        item11: 'Errors: there are informative error messages, difficult to make mistakes and easy to repair after making them.',
-        item12: 'Consistency: behavior is the same throughout the product, and there is one look & feel.',
-        item13: 'Tailorability: default settings and behavior can be specified for flexibility.',
-        item14: 'Accessibility: the product is possible to use for as many people as possible, and meets applicable accessibility standards.',
-        item15: 'Documentation: there is a Help that helps, and matches the functionality.'
-    },
-    'Charisma': {
-        desc: 'Does the product have “it”?',
-        item1: 'Uniqueness: the product is distinguishable and has something no one else has.',
-        item2: 'Satisfaction: how do you feel after using the product?',
-        item3: 'Professionalism: does the product have the appropriate flair of professionalism and feel fit for purpose?',
-        item4: 'Attractiveness: are all types of aspects of the product appealing to eyes and other senses?',
-        item5: 'Curiosity: will users get interested and try out what they can do with the product?',
-        item6: 'Entrancement: do users get hooked, have fun, in a flow, and fully engaged when using the product?',
-        item7: 'Hype: should the product use the latest and greatest technologies/ideas?',
-        item8: 'Expectancy: the product exceeds expectations and meets the needs you didn\'t know you had.',
-        item9: 'Attitude: do the product and its information have the right attitude and speak to you with the right language and style?',
-        item10: 'Directness: are (first) impressions impressive?',
-        item11: 'Story: are there compelling stories about the product\'s inception, construction or usage?'
-    },
-    'Security': {
-        desc: 'Does the product protect against unwanted usage?',
-        item1: 'Authentication: the product\'s identifications of the users.',
-        item2: 'Authorization: the product\'s handling of what an authenticated user can see and do.',
-        item3: 'Privacy: ability to not disclose data that is protected to unauthorized users.',
-        item4: 'Security holes: product should not invite to social engineering vulnerabilities.',
-        item5: 'Secrecy: the product should under no circumstances disclose information about the underlying systems.',
-        item6: 'Invulnerability: ability to withstand penetration attempts.',
-        item7: 'Virus-free: product will not transport virus, or appear as one.',
-        item8: 'Piracy Resistance: no possibility to illegally copy and distribute the software or code.',
-        item9: 'Compliance: security standards the product adheres to.'
-    },
-    'Performance': {
-        desc: 'Is the product fast enough?',
-        item1: 'Capacity: the many limits of the product, for different circumstances (e.g. slow network.)',
-        item2: 'Resource Utilization: appropriate usage of memory, storage and other resources.',
-        item3: 'Responsiveness: the speed of which an action is (perceived as) performed.',
-        item4: 'Availability: the system is available for use when it should be.',
-        item5: 'Throughput: the products ability to process many, many things.',
-        item6: 'Endurance: can the product handle load for a long time?',
-        item7: 'Feedback: is the feedback from the system on user actions appropriate?',
-        item8: 'Scalability: how well does the product scale up, out or down?'
-    },
-    'IT-bility': {
-        desc: 'Is the product easy to install, maintain and support?',
-        item1: 'System requirements: ability to run on supported configurations, and handle different environments or missing components.',
-        item2: 'Installability: product can be installed on intended platforms with appropriate footprint.',
-        item3: 'Upgrades: ease of upgrading to a newer version without loss of configuration and settings.',
-        item4: 'Uninstallation: are all files (except user\'s or system files) and other resources removed when uninstalling?',
-        item5: 'Configuration: can the installation be configured in various ways or places to support customer\'s usage?',
-        item6: 'Deployability: product can be rolled-out by IT department to different types of (restricted) users and environments.',
-        item7: 'Maintainability: are the product and its artifacts easy to maintain and support for customers?',
-        item8: 'Testability: how effectively can the deployed product be tested by the customer?'
-    },
-    'Compatibility': {
-        desc: 'How well does the product interact with software and environments?',
-        item1: 'Hardware Compatibility: the product can be used with applicable configurations of hardware components.',
-        item2: 'Operating System Compatibility: the product can run on intended operating system versions, and follows typical behavior.',
-        item3: 'Application Compatibility: the product, and its data, works with other applications customers are likely to use.',
-        item4: 'Configuration Compatibility: product\'s ability to blend in with configurations of the environment.',
-        item5: 'Backward Compatibility: can the product do everything the last version could?',
-        item6: 'Forward Compatibility: will the product be able to use artifacts or interfaces of future versions?',
-        item7: 'Sustainability: effects on the environment, e.g. energy efficiency, switch-offs, power-saving modes, telecommuting.',
-        item8: 'Standards Conformance: the product conforms to applicable standards, regulations, laws or ethics.'
-    },
-    'Supportability': {
-        desc: 'Can customers\' usage and problems be supported?',
-        item1: 'Identifiers: is it easy to identify parts of the product and their versions, or specific errors?',
-        item2: 'Diagnostics: is it possible to find out details regarding customer situations?',
-        item3: 'Troubleshootable: is it easy to pinpoint errors (e.g. log files) and get help?',
-        item4: 'Debugging: can you observe the internal states of the software when needed?',
-        item5: 'Versatility: ability to use the product in more ways than it was originally designed for.'
-    },
-    'Testability': {
-        desc: 'Is it easy to check and test the product?',
-        item1: 'Traceability: the product logs actions at appropriate levels and in usable format.',
-        item2: 'Controllability: ability to independently set states, objects or variables.',
-        item3: 'Observability: ability to observe things that should be tested.',
-        item4: 'Monitorability: can the product give hints on what/how it is doing?',
-        item5: 'Isolateability: ability to test a part by itself.',
-        item6: 'Stability: changes to the software are controlled, and not too frequent.',
-        item7: 'Automation: are there public or hidden programmatic interface that can be used?',
-        item8: 'Information: ability for testers to learn what needs to be learned...',
-        item9: 'Auditability: can the product and its creation be validated?'
-    },
-    'Maintainability': {
-        desc: 'Can the product be maintained and extended at low cost?',
-        item1: 'Flexibility: the ability to change the product as required by customers.',
-        item2: 'Extensibility: will it be easy to add features in the future?',
-        item3: 'Simplicity: the code is not more complex than needed, and does not obscure test design, execution and evaluation.',
-        item4: 'Readability: the code is adequately documented and easy to read and understand.',
-        item5: 'Transparency: Is it easy to understand the underlying structures?',
-        item6: 'Modularity: the code is split into manageable pieces.',
-        item7: 'Refactorability: are you satisfied with the unit tests?',
-        item8: 'Analyzability: ability to find causes for defects or other code of interest.'
-    },
-    'Portability': {
-        desc: 'Is transferring of the product to different environments enabled?',
-        item1: 'Reusability: can parts of the product be re-used elsewhere?',
-        item2: 'Adaptability: is it easy to change the product to support a different environment?',
-        item3: 'Compatibility: does the product comply with common interfaces or official standards?',
-        item4: 'Internationalization: it is easy to translate the product.',
-        item5: 'Localization: are all parts of the product adjusted to meet the needs of the targeted culture/country?',
-        item6: 'User Interface-robustness: will the product look equally good when translated?'
-    }
-};
+    var characteristicDescriptions = {
+        'Capability': {
+            desc: 'Can the product perform valuable functions?',
+            item1: 'Completeness: all important functions wanted by end users are available.',
+            item2: 'Accuracy: any output or calculation in the product is correct and presented with significant digits.',
+            item3: 'Efficiency: performs its actions in an efficient manner (without doing what it\'s not supposed to do.)',
+            item4: 'Interoperability: different features interact with each other in the best way.',
+            item5: 'Concurrency: ability to perform multiple parallel tasks, and run at the same time as other processes.',
+            item6: 'Data agnosticism: supports all possible data formats, and handles noise.',
+            item7: 'Extensibility: ability for customers or 3rd parties to add features or change behavior.'
+        },
+        'Reliability': {
+            desc: 'Can you trust the product in many and difficult situations?',
+            item1: 'Stability: the product shouldn\'t cause crashes, unhandled exceptions or script errors.',
+            item2: 'Robustness: the product handles foreseen and unforeseen errors gracefully.',
+            item3: 'Stress handling: how does the system cope when exceeding various limits?',
+            item4: 'Recoverability: it is possible to recover and continue using the product after a fatal error.',
+            item5: 'Data Integrity: all types of data remain intact throughout the product.',
+            item6: 'Safety: the product will not be part of damaging people or possessions.',
+            item7: 'Disaster Recovery: what if something really, really bad happens?',
+            item8: 'Trustworthiness: is the product\'s behavior consistent, predictable, and trustworthy?'
+        },
+        'Usability': {
+            desc: 'Is the product easy to use?',
+            item1: 'Affordance: product invites to discover possibilities of the product.',
+            item2: 'Intuitiveness: it is easy to understand and explain what the product can do.',
+            item3: 'Minimalism: there is nothing redundant about the product\'s content or appearance.',
+            item4: 'Learnability: it is fast and easy to learn how to use the product.',
+            item5: 'Memorability: once you have learnt how to do something you don\'t forget it.',
+            item6: 'Discoverability: the product\'s information and capabilities can be discovered by exploration of the user interface.',
+            item7: 'Operability: an experienced user can perform common actions very fast.',
+            item8: 'Interactivity: the product has easy-to-understand states and possibilities of interacting with the application (via GUI or API).',
+            item9: 'Control: the user should feel in control over the proceedings of the software.',
+            item10: 'Clarity: is everything stated explicitly and in detail, with a language that can be understood, leaving no room for doubt?',
+            item11: 'Errors: there are informative error messages, difficult to make mistakes and easy to repair after making them.',
+            item12: 'Consistency: behavior is the same throughout the product, and there is one look & feel.',
+            item13: 'Tailorability: default settings and behavior can be specified for flexibility.',
+            item14: 'Accessibility: the product is possible to use for as many people as possible, and meets applicable accessibility standards.',
+            item15: 'Documentation: there is a Help that helps, and matches the functionality.'
+        },
+        'Charisma': {
+            desc: 'Does the product have “it”?',
+            item1: 'Uniqueness: the product is distinguishable and has something no one else has.',
+            item2: 'Satisfaction: how do you feel after using the product?',
+            item3: 'Professionalism: does the product have the appropriate flair of professionalism and feel fit for purpose?',
+            item4: 'Attractiveness: are all types of aspects of the product appealing to eyes and other senses?',
+            item5: 'Curiosity: will users get interested and try out what they can do with the product?',
+            item6: 'Entrancement: do users get hooked, have fun, in a flow, and fully engaged when using the product?',
+            item7: 'Hype: should the product use the latest and greatest technologies/ideas?',
+            item8: 'Expectancy: the product exceeds expectations and meets the needs you didn\'t know you had.',
+            item9: 'Attitude: do the product and its information have the right attitude and speak to you with the right language and style?',
+            item10: 'Directness: are (first) impressions impressive?',
+            item11: 'Story: are there compelling stories about the product\'s inception, construction or usage?'
+        },
+        'Security': {
+            desc: 'Does the product protect against unwanted usage?',
+            item1: 'Authentication: the product\'s identifications of the users.',
+            item2: 'Authorization: the product\'s handling of what an authenticated user can see and do.',
+            item3: 'Privacy: ability to not disclose data that is protected to unauthorized users.',
+            item4: 'Security holes: product should not invite to social engineering vulnerabilities.',
+            item5: 'Secrecy: the product should under no circumstances disclose information about the underlying systems.',
+            item6: 'Invulnerability: ability to withstand penetration attempts.',
+            item7: 'Virus-free: product will not transport virus, or appear as one.',
+            item8: 'Piracy Resistance: no possibility to illegally copy and distribute the software or code.',
+            item9: 'Compliance: security standards the product adheres to.'
+        },
+        'Performance': {
+            desc: 'Is the product fast enough?',
+            item1: 'Capacity: the many limits of the product, for different circumstances (e.g. slow network.)',
+            item2: 'Resource Utilization: appropriate usage of memory, storage and other resources.',
+            item3: 'Responsiveness: the speed of which an action is (perceived as) performed.',
+            item4: 'Availability: the system is available for use when it should be.',
+            item5: 'Throughput: the products ability to process many, many things.',
+            item6: 'Endurance: can the product handle load for a long time?',
+            item7: 'Feedback: is the feedback from the system on user actions appropriate?',
+            item8: 'Scalability: how well does the product scale up, out or down?'
+        },
+        'IT-bility': {
+            desc: 'Is the product easy to install, maintain and support?',
+            item1: 'System requirements: ability to run on supported configurations, and handle different environments or missing components.',
+            item2: 'Installability: product can be installed on intended platforms with appropriate footprint.',
+            item3: 'Upgrades: ease of upgrading to a newer version without loss of configuration and settings.',
+            item4: 'Uninstallation: are all files (except user\'s or system files) and other resources removed when uninstalling?',
+            item5: 'Configuration: can the installation be configured in various ways or places to support customer\'s usage?',
+            item6: 'Deployability: product can be rolled-out by IT department to different types of (restricted) users and environments.',
+            item7: 'Maintainability: are the product and its artifacts easy to maintain and support for customers?',
+            item8: 'Testability: how effectively can the deployed product be tested by the customer?'
+        },
+        'Compatibility': {
+            desc: 'How well does the product interact with software and environments?',
+            item1: 'Hardware Compatibility: the product can be used with applicable configurations of hardware components.',
+            item2: 'Operating System Compatibility: the product can run on intended operating system versions, and follows typical behavior.',
+            item3: 'Application Compatibility: the product, and its data, works with other applications customers are likely to use.',
+            item4: 'Configuration Compatibility: product\'s ability to blend in with configurations of the environment.',
+            item5: 'Backward Compatibility: can the product do everything the last version could?',
+            item6: 'Forward Compatibility: will the product be able to use artifacts or interfaces of future versions?',
+            item7: 'Sustainability: effects on the environment, e.g. energy efficiency, switch-offs, power-saving modes, telecommuting.',
+            item8: 'Standards Conformance: the product conforms to applicable standards, regulations, laws or ethics.'
+        },
+        'Supportability': {
+            desc: 'Can customers\' usage and problems be supported?',
+            item1: 'Identifiers: is it easy to identify parts of the product and their versions, or specific errors?',
+            item2: 'Diagnostics: is it possible to find out details regarding customer situations?',
+            item3: 'Troubleshootable: is it easy to pinpoint errors (e.g. log files) and get help?',
+            item4: 'Debugging: can you observe the internal states of the software when needed?',
+            item5: 'Versatility: ability to use the product in more ways than it was originally designed for.'
+        },
+        'Testability': {
+            desc: 'Is it easy to check and test the product?',
+            item1: 'Traceability: the product logs actions at appropriate levels and in usable format.',
+            item2: 'Controllability: ability to independently set states, objects or variables.',
+            item3: 'Observability: ability to observe things that should be tested.',
+            item4: 'Monitorability: can the product give hints on what/how it is doing?',
+            item5: 'Isolateability: ability to test a part by itself.',
+            item6: 'Stability: changes to the software are controlled, and not too frequent.',
+            item7: 'Automation: are there public or hidden programmatic interface that can be used?',
+            item8: 'Information: ability for testers to learn what needs to be learned...',
+            item9: 'Auditability: can the product and its creation be validated?'
+        },
+        'Maintainability': {
+            desc: 'Can the product be maintained and extended at low cost?',
+            item1: 'Flexibility: the ability to change the product as required by customers.',
+            item2: 'Extensibility: will it be easy to add features in the future?',
+            item3: 'Simplicity: the code is not more complex than needed, and does not obscure test design, execution and evaluation.',
+            item4: 'Readability: the code is adequately documented and easy to read and understand.',
+            item5: 'Transparency: Is it easy to understand the underlying structures?',
+            item6: 'Modularity: the code is split into manageable pieces.',
+            item7: 'Refactorability: are you satisfied with the unit tests?',
+            item8: 'Analyzability: ability to find causes for defects or other code of interest.'
+        },
+        'Portability': {
+            desc: 'Is transferring of the product to different environments enabled?',
+            item1: 'Reusability: can parts of the product be re-used elsewhere?',
+            item2: 'Adaptability: is it easy to change the product to support a different environment?',
+            item3: 'Compatibility: does the product comply with common interfaces or official standards?',
+            item4: 'Internationalization: it is easy to translate the product.',
+            item5: 'Localization: are all parts of the product adjusted to meet the needs of the targeted culture/country?',
+            item6: 'User Interface-robustness: will the product look equally good when translated?'
+        }
+    };
     var description = characteristicDescriptions[characteristic];
     var descriptionText = document.getElementById('descriptionTextC');
     descriptionText.textContent = '';
