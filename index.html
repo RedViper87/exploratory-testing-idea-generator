@@ -18,6 +18,7 @@ body {
 }
 .container {
     text-align: center;
+    padding: 10px;
 }
 .grid-container {
     display: grid;
@@ -26,7 +27,7 @@ body {
 .boxed-div {
     border: 1px solid black;
     border-radius: 10px;
-    padding: 10px;
+    padding: 20px;
     margin: 10px auto 0 auto;
     background-color: white;
     width: 300px;
@@ -34,12 +35,25 @@ body {
     word-wrap: break-word; /* Allow words to wrap */
     white-space: pre-line; /* Preserve newline characters */
 }
+.boxed-div p {
+    margin: 0px;
+}
+.top-boxed-div {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px auto 0 auto;
+    background-color: white;
+    width: 300px;
+    height: 75px !important;
+    word-wrap: break-word;
+    white-space: pre-line;
+}
 .description {
     text-align: left;
     border: 1px solid black;
     border-radius: 5px;
     padding: 10px;
-    margin: 10px auto;
     background-color: white;
     width: 200px;
     height: 100px;
@@ -66,6 +80,7 @@ button {
 }
 .small-heading {
     font-weight: 900;
+    margin: 0 auto 10px auto;
 }
 #item1 {
     grid-column-start: 1;
@@ -94,11 +109,11 @@ button {
     <button onclick="generateRandomTopic('e', ['Structure', 'Function', 'Data', 'Platform', 'Operations', 'Time'], 'topicResult1'), generateRandomTopic('c', ['Capability', 'Reliability', 'Usability', 'Charisma', 'Security', 'Performance', 'IT-bility', 'Compatibility', 'Supportability', 'Testability', 'Maintainability', 'Portability'], 'topicResult2')">Generate Idea</button>
     <button onclick="clearResults()">Clear Results</button>
     <div class="grid-container">
-        <div class="boxed-div" id="item1">
+        <div class="top-boxed-div" id="item1">
             <p class="small-heading">Product Element to Test:</p>
             <p id="topicResult1" class="result"></p>
         </div>
-        <div class="boxed-div" id="item2">
+        <div class="top-boxed-div" id="item2">
             <p class="small-heading">Software Quality Characteristic:</p>
             <p id="topicResult2" class="result"></p>
         </div>
