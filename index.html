@@ -21,22 +21,36 @@ body {
 .column-container {
     text-align: center;
     display: flex;
-    justify-content: space-between;
 }
 .grid-container {
     display: grid;
-    grid-auto-flow: row;
+    grid-template-columns: auto auto;
+    grid-gap: 2px;
 }
 .boxed-div {
     border: 1px solid black;
     border-radius: 10px;
     padding: 20px;
-    margin: 0 auto 0 auto;
     background-color: whitesmoke;
     width: 300px;
-    height: auto; /* Set height to auto to allow content to expand */
-    word-wrap: break-word; /* Allow words to wrap */
-    white-space: pre-line; /* Preserve newline characters */
+    height: 500px;
+    overflow-y: auto;
+    word-wrap: break-word;
+    white-space: pre-line;
+}
+.info-panel {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: whitesmoke;
+    width: 300px;
+    height: 619px;
+    overflow-y: auto;
+    word-wrap: break-word;
+    white-space: pre-line;
+}
+.full-width {
+    text-align: justify;
 }
 .boxed-div p {
     margin: 0px;
@@ -63,7 +77,6 @@ body {
     overflow-y: auto;
 }
 h1 {
-    margin-bottom: 20px;
     color: #8adc0f;
 }
 button {
@@ -73,7 +86,7 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     font-weight: 400;
-    margin: 5px auto 20px auto;
+    margin: 0 auto 20px auto;
     cursor: pointer;
     width: 200px;
     background-color: #1b77e1;
@@ -111,12 +124,13 @@ button {
     <button onclick="clearResults()">Clear Results</button>
     <div class="column-container">
         <div class="grid-container">
-            <div class="boxed-div">
-                <p style="text-align: left;">Software professionals are encouraged to explore this tool and provide feedback for further enhancements and improvements. Your insights can contribute to refining this tool to better serve the testing community.
-                    <br><br>Please click here to provide your valuable suggestions and feedback.<br><br>
+            <div class="info-panel">
+                <p><h2>Hello World!</h2></p>
+                <p class="full-width">Software professionals are encouraged to explore this tool and provide feedback for further enhancements and improvements. Your insights can contribute to refining this tool to better serve the testing community.
+                    <br><br>Please <a href="https://www.shaneparten.com/contact" target="_blank">click here</a> to provide your valuable suggestions and feedback.<br><br>
                     References:
-                    <a href="https://www.satisfice.com/download/heuristic-test-strategy-model" target="_blank">Product Elements</a>
-                    <a href="https://thetesteye.com/posters/TheTestEye_SoftwareQualityCharacteristics.pdf" target="_blank">Software Quality Characteristics</a>
+                    <a>&#x2022; </a><a href="https://www.satisfice.com/download/heuristic-test-strategy-model" target="_blank">Product Elements</a>
+                    <a>&#x2022; </a><a href="https://thetesteye.com/posters/TheTestEye_SoftwareQualityCharacteristics.pdf" target="_blank">Software Quality Characteristics</a>
                 </p>
             </div>
         </div>
