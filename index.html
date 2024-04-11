@@ -82,6 +82,7 @@ h1 {
 button {
     border: 1px solid black;
     border-radius: 5px;
+    box-shadow: -2px 2px 5px #777;
     color: white;
     padding: 10px 20px;
     font-size: 16px;
@@ -90,6 +91,11 @@ button {
     cursor: pointer;
     width: 200px;
     background-color: #1b77e1;
+}
+button:active {
+    transform: translate(-2px,2px);
+    box-shadow: 0 0 0;
+    outline: 0;
 }
 .result {
     margin-top: -20px;
