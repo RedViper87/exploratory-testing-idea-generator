@@ -127,7 +127,7 @@ button:active {
 
 <div class="container">
     <h1>Exploratory Testing Idea Generator</h1>
-    <button onclick="generateRandomTopic('e', ['Structure', 'Function', 'Data', 'Platform', 'Operations', 'Time'], 'topicResult1'), generateRandomTopic('c', ['Capability', 'Reliability', 'Usability', 'Charisma', 'Security', 'Performance', 'IT-bility', 'Compatibility', 'Supportability', 'Testability', 'Maintainability', 'Portability'], 'topicResult2')">Generate Idea</button>
+    <button onclick="generateRandomIdea()">Generate Idea</button>
     <button onclick="clearResults()">Clear Results</button>
     <div class="column-container">
         <div class="grid-container">
@@ -164,6 +164,18 @@ button:active {
 
 
 <script>
+function generateRandomIdea() {
+    var iterations = 10;
+    var delay = 70;
+    
+    for (var i = 0; i < iterations; i++) {
+        setTimeout(function() {
+            generateRandomTopic('e', ['Structure', 'Function', 'Data', 'Platform', 'Operations', 'Time'], 'topicResult1');
+            generateRandomTopic('c', ['Capability', 'Reliability', 'Usability', 'Charisma', 'Security', 'Performance', 'IT-bility', 'Compatibility', 'Supportability', 'Testability', 'Maintainability', 'Portability'], 'topicResult2');
+        }, i * delay);
+    }
+}
+
 function generateRandomTopic(type, array, resultId) {
     var min = 1;
     var max = array.length;
