@@ -165,8 +165,8 @@ button:active {
 
 <script>
 function generateRandomIdea() {
-    var iterations = 25;
-    var delay = 5;
+    var iterations = 15;
+    var delay = 8;
     
     generateRandomIdeaRecursive(iterations, delay, 0);
 }
@@ -206,58 +206,58 @@ function setElementDescription(element) {
     var elementDescriptions = {
         'Structure': {
             desc: 'Everything that comprises the physical product.',
-            item1: '&#x2022; Code: the code structures that comprise the product, from executables to individual routines.',
-            item2: '&#x2022; Hardware: any hardware component that is integral to the product.',
-            item3: '&#x2022; Service: any server or process running independently of others that may comprise the product.',
-            item4: '&#x2022; Non-executable files: any files other than multimedia or programs, like text files, sample data, or help files.',
-            item5: '&#x2022; Collateral: anything beyond that is also part of the product, such as paper documents, web pages, packaging, license agreements, etc.'
+            item1: 'Code: the code structures that comprise the product, from executables to individual routines.',
+            item2: 'Hardware: any hardware component that is integral to the product.',
+            item3: 'Service: any server or process running independently of others that may comprise the product.',
+            item4: 'Non-executable files: any files other than multimedia or programs, like text files, sample data, or help files.',
+            item5: 'Collateral: anything beyond that is also part of the product, such as paper documents, web pages, packaging, license agreements, etc.'
         },
         'Function': {
             desc: 'Everything that the product does.',
-            item1: '&#x2022; Multi-user/Social: any function designed to facilitate interaction among people or to allow concurrent access to the same resources.',
-            item2: '&#x2022; Calculation: any arithmetic function or arithmetic operations embedded in other functions.',
-            item3: '&#x2022; Time-related: time-out settings; periodic events; time zones; business holidays; terms and warranty periods; chronograph functions.',
-            item4: '&#x2022; Security-related: rights of each class of user; protection of data; encryption; front end vs. back end protections; vulnerabilities in sub-systems.',
-            item5: '&#x2022; Transformations: functions that modify or transform something (e.g. setting fonts, inserting clip art, withdrawing money from account).',
-            item6: '&#x2022; Startup/Shutdown: each method and interface for invocation and initialization as well as exiting the product.',
-            item7: '&#x2022; Multimedia: sounds, bitmaps, videos, or any graphical display embedded in the product.',
-            item8: '&#x2022; Error Handling: any functions that detect and recover from errors, including all error messages.',
-            item9: '&#x2022; Interactions: any interactions between functions within the product.',
-            item10: '&#x2022; Testability: any functions provided to help test the product, such as diagnostics, log files, asserts, test menus, etc.'
+            item1: 'Multi-user/Social: any function designed to facilitate interaction among people or to allow concurrent access to the same resources.',
+            item2: 'Calculation: any arithmetic function or arithmetic operations embedded in other functions.',
+            item3: 'Time-related: time-out settings; periodic events; time zones; business holidays; terms and warranty periods; chronograph functions.',
+            item4: 'Security-related: rights of each class of user; protection of data; encryption; front end vs. back end protections; vulnerabilities in sub-systems.',
+            item5: 'Transformations: functions that modify or transform something (e.g. setting fonts, inserting clip art, withdrawing money from account).',
+            item6: 'Startup/Shutdown: each method and interface for invocation and initialization as well as exiting the product.',
+            item7: 'Multimedia: sounds, bitmaps, videos, or any graphical display embedded in the product.',
+            item8: 'Error Handling: any functions that detect and recover from errors, including all error messages.',
+            item9: 'Interactions: any interactions between functions within the product.',
+            item10: 'Testability: any functions provided to help test the product, such as diagnostics, log files, asserts, test menus, etc.'
         },
         'Data': {
             desc: 'Everything that the product processes and produces.',
-            item1: '&#x2022; Input/Output: any data that is processed by the product, and any data that results from that processing.',
-            item2: '&#x2022; Preset: any data that is supplied as part of the product, or otherwise built into it, such as prefabricated databases, default values, etc.',
-            item3: '&#x2022; Persistent: any data that is expected to persist over multiple operations. This includes modes or states of the product, such as options settings, view modes, contents of documents, etc.',
-            item4: '&#x2022; Interdependent/Interacting: any data that influences or is influenced by the state of other data; or jointly influences an output.',
-            item5: '&#x2022; Sequences/Combinations: any ordering or permutation of data, e.g. word order, sorted vs. unsorted data, order of tests.',
-            item6: '&#x2022; Cardinality: numbers of objects or fields may vary (e.g. zero, one, many, max, open limit). Some may have to be unique (e.g. database keys).',
-            item7: '&#x2022; Big/Little: variations in the size and aggregation of data.',
-            item8: '&#x2022; Invalid/Noise: any data or state that is invalid, corrupted, or produced in an uncontrolled or incorrect fashion.',
-            item9: '&#x2022; Lifecycle: transformations over the lifetime of a data entity as it is created, accessed, modified, and deleted.'
+            item1: 'Input/Output: any data that is processed by the product, and any data that results from that processing.',
+            item2: 'Preset: any data that is supplied as part of the product, or otherwise built into it, such as prefabricated databases, default values, etc.',
+            item3: 'Persistent: any data that is expected to persist over multiple operations. This includes modes or states of the product, such as options settings, view modes, contents of documents, etc.',
+            item4: 'Interdependent/Interacting: any data that influences or is influenced by the state of other data; or jointly influences an output.',
+            item5: 'Sequences/Combinations: any ordering or permutation of data, e.g. word order, sorted vs. unsorted data, order of tests.',
+            item6: 'Cardinality: numbers of objects or fields may vary (e.g. zero, one, many, max, open limit). Some may have to be unique (e.g. database keys).',
+            item7: 'Big/Little: variations in the size and aggregation of data.',
+            item8: 'Invalid/Noise: any data or state that is invalid, corrupted, or produced in an uncontrolled or incorrect fashion.',
+            item9: 'Lifecycle: transformations over the lifetime of a data entity as it is created, accessed, modified, and deleted.'
         },
         'Platform': {
             desc: 'Everything on which the product depends (and that is outside your project).',
-            item1: '&#x2022; External Hardware: hardware components and configurations that are not part of the shipping product, but are required (or optional) for the product to work: systems, servers, memory, keyboards, the Cloud.',
-            item2: '&#x2022; External Software: software components and configurations that are not a part of the shipping product, but are required (or optional) for the product to work: operating systems, concurrently executing applications, drivers, fonts, etc.',
-            item3: '&#x2022; Embedded Components: libraries and other components that are embedded in your product but are produced outside your project.',
-            item4: '&#x2022; Product Footprint: The resources in the environment that are used, reserved, or consumed by the product (memory, filehandles, etc.)'
+            item1: 'External Hardware: hardware components and configurations that are not part of the shipping product, but are required (or optional) for the product to work: systems, servers, memory, keyboards, the Cloud.',
+            item2: 'External Software: software components and configurations that are not a part of the shipping product, but are required (or optional) for the product to work: operating systems, concurrently executing applications, drivers, fonts, etc.',
+            item3: 'Embedded Components: libraries and other components that are embedded in your product but are produced outside your project.',
+            item4: 'Product Footprint: The resources in the environment that are used, reserved, or consumed by the product (memory, filehandles, etc.)'
         },
         'Operations': {
             desc: 'How the product will be used.',
-            item1: '&#x2022; Users: the attributes of the various kinds of users.',
-            item2: '&#x2022; Environment: the physical environment in which the product operates, including such elements as noise, light, and distractions.',
-            item3: '&#x2022; Common Use: patterns and sequences of input that the product will typically encounter. This varies by user.',
-            item4: '&#x2022; Disfavored Use: patterns of input produced by ignorant, mistaken, careless or malicious use.',
-            item5: '&#x2022; Extreme Use: challenging patterns and sequences of input that are consistent with the intended use of the product.'
+            item1: 'Users: the attributes of the various kinds of users.',
+            item2: 'Environment: the physical environment in which the product operates, including such elements as noise, light, and distractions.',
+            item3: 'Common Use: patterns and sequences of input that the product will typically encounter. This varies by user.',
+            item4: 'Disfavored Use: patterns of input produced by ignorant, mistaken, careless or malicious use.',
+            item5: 'Extreme Use: challenging patterns and sequences of input that are consistent with the intended use of the product.'
         },
         'Time': {
             desc: 'Any relationship between the product and time.',
-            item1: '&#x2022; Input/Output: when input is provided, when output created, and any timing relationships (delays, intervals, etc.) among them.',
-            item2: '&#x2022; Fast/Slow: testing with “fast” or “slow” input; fastest and slowest; combinations of fast and slow.',
-            item3: '&#x2022; Changing Rates: speeding up and slowing down (spikes, bursts, hangs, bottlenecks, interruptions).',
-            item4: '&#x2022; Concurrency: more than one thing happening at once (multi-user, time-sharing, threads, and semaphores, shared data).'
+            item1: 'Input/Output: when input is provided, when output created, and any timing relationships (delays, intervals, etc.) among them.',
+            item2: 'Fast/Slow: testing with “fast” or “slow” input; fastest and slowest; combinations of fast and slow.',
+            item3: 'Changing Rates: speeding up and slowing down (spikes, bursts, hangs, bottlenecks, interruptions).',
+            item4: 'Concurrency: more than one thing happening at once (multi-user, time-sharing, threads, and semaphores, shared data).'
         }
     };
     var description = elementDescriptions[element];
@@ -271,7 +271,7 @@ function setElementDescription(element) {
                 descriptionText.innerHTML += description[key] + '\n\n';
                 isFirstIteration = false;
             } else {
-                descriptionText.innerHTML += '<div style="text-align: left;">' + description[key] + '</div>';
+                descriptionText.innerHTML += '<div style="text-align: left;">&#x2022; ' + description[key] + '</div>';
             }
         }
     }
@@ -282,141 +282,141 @@ function setCharacteristicDescription(characteristic) {
     var characteristicDescriptions = {
         'Capability': {
             desc: 'Can the product perform valuable functions?',
-            item1: '&#x2022; Completeness: all important functions wanted by end users are available.',
-            item2: '&#x2022; Accuracy: any output or calculation in the product is correct and presented with significant digits.',
-            item3: '&#x2022; Efficiency: performs its actions in an efficient manner (without doing what it\'s not supposed to do.)',
-            item4: '&#x2022; Interoperability: different features interact with each other in the best way.',
-            item5: '&#x2022; Concurrency: ability to perform multiple parallel tasks, and run at the same time as other processes.',
-            item6: '&#x2022; Data agnosticism: supports all possible data formats, and handles noise.',
-            item7: '&#x2022; Extensibility: ability for customers or 3rd parties to add features or change behavior.'
+            item1: 'Completeness: all important functions wanted by end users are available.',
+            item2: 'Accuracy: any output or calculation in the product is correct and presented with significant digits.',
+            item3: 'Efficiency: performs its actions in an efficient manner (without doing what it\'s not supposed to do.)',
+            item4: 'Interoperability: different features interact with each other in the best way.',
+            item5: 'Concurrency: ability to perform multiple parallel tasks, and run at the same time as other processes.',
+            item6: 'Data agnosticism: supports all possible data formats, and handles noise.',
+            item7: 'Extensibility: ability for customers or 3rd parties to add features or change behavior.'
         },
         'Reliability': {
             desc: 'Can you trust the product in many and difficult situations?',
-            item1: '&#x2022; Stability: the product shouldn\'t cause crashes, unhandled exceptions or script errors.',
-            item2: '&#x2022; Robustness: the product handles foreseen and unforeseen errors gracefully.',
-            item3: '&#x2022; Stress handling: how does the system cope when exceeding various limits?',
-            item4: '&#x2022; Recoverability: it is possible to recover and continue using the product after a fatal error.',
-            item5: '&#x2022; Data Integrity: all types of data remain intact throughout the product.',
-            item6: '&#x2022; Safety: the product will not be part of damaging people or possessions.',
-            item7: '&#x2022; Disaster Recovery: what if something really, really bad happens?',
-            item8: '&#x2022; Trustworthiness: is the product\'s behavior consistent, predictable, and trustworthy?'
+            item1: 'Stability: the product shouldn\'t cause crashes, unhandled exceptions or script errors.',
+            item2: 'Robustness: the product handles foreseen and unforeseen errors gracefully.',
+            item3: 'Stress handling: how does the system cope when exceeding various limits?',
+            item4: 'Recoverability: it is possible to recover and continue using the product after a fatal error.',
+            item5: 'Data Integrity: all types of data remain intact throughout the product.',
+            item6: 'Safety: the product will not be part of damaging people or possessions.',
+            item7: 'Disaster Recovery: what if something really, really bad happens?',
+            item8: 'Trustworthiness: is the product\'s behavior consistent, predictable, and trustworthy?'
         },
         'Usability': {
             desc: 'Is the product easy to use?',
-            item1: '&#x2022; Affordance: product invites to discover possibilities of the product.',
-            item2: '&#x2022; Intuitiveness: it is easy to understand and explain what the product can do.',
-            item3: '&#x2022; Minimalism: there is nothing redundant about the product\'s content or appearance.',
-            item4: '&#x2022; Learnability: it is fast and easy to learn how to use the product.',
-            item5: '&#x2022; Memorability: once you have learnt how to do something you don\'t forget it.',
-            item6: '&#x2022; Discoverability: the product\'s information and capabilities can be discovered by exploration of the user interface.',
-            item7: '&#x2022; Operability: an experienced user can perform common actions very fast.',
-            item8: '&#x2022; Interactivity: the product has easy-to-understand states and possibilities of interacting with the application (via GUI or API).',
-            item9: '&#x2022; Control: the user should feel in control over the proceedings of the software.',
-            item10: '&#x2022; Clarity: is everything stated explicitly and in detail, with a language that can be understood, leaving no room for doubt?',
-            item11: '&#x2022; Errors: there are informative error messages, difficult to make mistakes and easy to repair after making them.',
-            item12: '&#x2022; Consistency: behavior is the same throughout the product, and there is one look & feel.',
-            item13: '&#x2022; Tailorability: default settings and behavior can be specified for flexibility.',
-            item14: '&#x2022; Accessibility: the product is possible to use for as many people as possible, and meets applicable accessibility standards.',
-            item15: '&#x2022; Documentation: there is a Help that helps, and matches the functionality.'
+            item1: 'Affordance: product invites to discover possibilities of the product.',
+            item2: 'Intuitiveness: it is easy to understand and explain what the product can do.',
+            item3: 'Minimalism: there is nothing redundant about the product\'s content or appearance.',
+            item4: 'Learnability: it is fast and easy to learn how to use the product.',
+            item5: 'Memorability: once you have learnt how to do something you don\'t forget it.',
+            item6: 'Discoverability: the product\'s information and capabilities can be discovered by exploration of the user interface.',
+            item7: 'Operability: an experienced user can perform common actions very fast.',
+            item8: 'Interactivity: the product has easy-to-understand states and possibilities of interacting with the application (via GUI or API).',
+            item9: 'Control: the user should feel in control over the proceedings of the software.',
+            item10: 'Clarity: is everything stated explicitly and in detail, with a language that can be understood, leaving no room for doubt?',
+            item11: 'Errors: there are informative error messages, difficult to make mistakes and easy to repair after making them.',
+            item12: 'Consistency: behavior is the same throughout the product, and there is one look & feel.',
+            item13: 'Tailorability: default settings and behavior can be specified for flexibility.',
+            item14: 'Accessibility: the product is possible to use for as many people as possible, and meets applicable accessibility standards.',
+            item15: 'Documentation: there is a Help that helps, and matches the functionality.'
         },
         'Charisma': {
             desc: 'Does the product have “it”?',
-            item1: '&#x2022; Uniqueness: the product is distinguishable and has something no one else has.',
-            item2: '&#x2022; Satisfaction: how do you feel after using the product?',
-            item3: '&#x2022; Professionalism: does the product have the appropriate flair of professionalism and feel fit for purpose?',
-            item4: '&#x2022; Attractiveness: are all types of aspects of the product appealing to eyes and other senses?',
-            item5: '&#x2022; Curiosity: will users get interested and try out what they can do with the product?',
-            item6: '&#x2022; Entrancement: do users get hooked, have fun, in a flow, and fully engaged when using the product?',
-            item7: '&#x2022; Hype: should the product use the latest and greatest technologies/ideas?',
-            item8: '&#x2022; Expectancy: the product exceeds expectations and meets the needs you didn\'t know you had.',
-            item9: '&#x2022; Attitude: do the product and its information have the right attitude and speak to you with the right language and style?',
-            item10: '&#x2022; Directness: are (first) impressions impressive?',
-            item11: '&#x2022; Story: are there compelling stories about the product\'s inception, construction or usage?'
+            item1: 'Uniqueness: the product is distinguishable and has something no one else has.',
+            item2: 'Satisfaction: how do you feel after using the product?',
+            item3: 'Professionalism: does the product have the appropriate flair of professionalism and feel fit for purpose?',
+            item4: 'Attractiveness: are all types of aspects of the product appealing to eyes and other senses?',
+            item5: 'Curiosity: will users get interested and try out what they can do with the product?',
+            item6: 'Entrancement: do users get hooked, have fun, in a flow, and fully engaged when using the product?',
+            item7: 'Hype: should the product use the latest and greatest technologies/ideas?',
+            item8: 'Expectancy: the product exceeds expectations and meets the needs you didn\'t know you had.',
+            item9: 'Attitude: do the product and its information have the right attitude and speak to you with the right language and style?',
+            item10: 'Directness: are (first) impressions impressive?',
+            item11: 'Story: are there compelling stories about the product\'s inception, construction or usage?'
         },
         'Security': {
             desc: 'Does the product protect against unwanted usage?',
-            item1: '&#x2022; Authentication: the product\'s identifications of the users.',
-            item2: '&#x2022; Authorization: the product\'s handling of what an authenticated user can see and do.',
-            item3: '&#x2022; Privacy: ability to not disclose data that is protected to unauthorized users.',
-            item4: '&#x2022; Security holes: product should not invite to social engineering vulnerabilities.',
-            item5: '&#x2022; Secrecy: the product should under no circumstances disclose information about the underlying systems.',
-            item6: '&#x2022; Invulnerability: ability to withstand penetration attempts.',
-            item7: '&#x2022; Virus-free: product will not transport virus, or appear as one.',
-            item8: '&#x2022; Piracy Resistance: no possibility to illegally copy and distribute the software or code.',
-            item9: '&#x2022; Compliance: security standards the product adheres to.'
+            item1: 'Authentication: the product\'s identifications of the users.',
+            item2: 'Authorization: the product\'s handling of what an authenticated user can see and do.',
+            item3: 'Privacy: ability to not disclose data that is protected to unauthorized users.',
+            item4: 'Security holes: product should not invite to social engineering vulnerabilities.',
+            item5: 'Secrecy: the product should under no circumstances disclose information about the underlying systems.',
+            item6: 'Invulnerability: ability to withstand penetration attempts.',
+            item7: 'Virus-free: product will not transport virus, or appear as one.',
+            item8: 'Piracy Resistance: no possibility to illegally copy and distribute the software or code.',
+            item9: 'Compliance: security standards the product adheres to.'
         },
         'Performance': {
             desc: 'Is the product fast enough?',
-            item1: '&#x2022; Capacity: the many limits of the product, for different circumstances (e.g. slow network.)',
-            item2: '&#x2022; Resource Utilization: appropriate usage of memory, storage and other resources.',
-            item3: '&#x2022; Responsiveness: the speed of which an action is (perceived as) performed.',
-            item4: '&#x2022; Availability: the system is available for use when it should be.',
-            item5: '&#x2022; Throughput: the products ability to process many, many things.',
-            item6: '&#x2022; Endurance: can the product handle load for a long time?',
-            item7: '&#x2022; Feedback: is the feedback from the system on user actions appropriate?',
-            item8: '&#x2022; Scalability: how well does the product scale up, out or down?'
+            item1: 'Capacity: the many limits of the product, for different circumstances (e.g. slow network.)',
+            item2: 'Resource Utilization: appropriate usage of memory, storage and other resources.',
+            item3: 'Responsiveness: the speed of which an action is (perceived as) performed.',
+            item4: 'Availability: the system is available for use when it should be.',
+            item5: 'Throughput: the products ability to process many, many things.',
+            item6: 'Endurance: can the product handle load for a long time?',
+            item7: 'Feedback: is the feedback from the system on user actions appropriate?',
+            item8: 'Scalability: how well does the product scale up, out or down?'
         },
         'IT-bility': {
             desc: 'Is the product easy to install, maintain and support?',
-            item1: '&#x2022; System requirements: ability to run on supported configurations, and handle different environments or missing components.',
-            item2: '&#x2022; Installability: product can be installed on intended platforms with appropriate footprint.',
-            item3: '&#x2022; Upgrades: ease of upgrading to a newer version without loss of configuration and settings.',
-            item4: '&#x2022; Uninstallation: are all files (except user\'s or system files) and other resources removed when uninstalling?',
-            item5: '&#x2022; Configuration: can the installation be configured in various ways or places to support customer\'s usage?',
-            item6: '&#x2022; Deployability: product can be rolled-out by IT department to different types of (restricted) users and environments.',
-            item7: '&#x2022; Maintainability: are the product and its artifacts easy to maintain and support for customers?',
-            item8: '&#x2022; Testability: how effectively can the deployed product be tested by the customer?'
+            item1: 'System requirements: ability to run on supported configurations, and handle different environments or missing components.',
+            item2: 'Installability: product can be installed on intended platforms with appropriate footprint.',
+            item3: 'Upgrades: ease of upgrading to a newer version without loss of configuration and settings.',
+            item4: 'Uninstallation: are all files (except user\'s or system files) and other resources removed when uninstalling?',
+            item5: 'Configuration: can the installation be configured in various ways or places to support customer\'s usage?',
+            item6: 'Deployability: product can be rolled-out by IT department to different types of (restricted) users and environments.',
+            item7: 'Maintainability: are the product and its artifacts easy to maintain and support for customers?',
+            item8: 'Testability: how effectively can the deployed product be tested by the customer?'
         },
         'Compatibility': {
             desc: 'How well does the product interact with software and environments?',
-            item1: '&#x2022; Hardware Compatibility: the product can be used with applicable configurations of hardware components.',
-            item2: '&#x2022; Operating System Compatibility: the product can run on intended operating system versions, and follows typical behavior.',
-            item3: '&#x2022; Application Compatibility: the product, and its data, works with other applications customers are likely to use.',
-            item4: '&#x2022; Configuration Compatibility: product\'s ability to blend in with configurations of the environment.',
-            item5: '&#x2022; Backward Compatibility: can the product do everything the last version could?',
-            item6: '&#x2022; Forward Compatibility: will the product be able to use artifacts or interfaces of future versions?',
-            item7: '&#x2022; Sustainability: effects on the environment, e.g. energy efficiency, switch-offs, power-saving modes, telecommuting.',
-            item8: '&#x2022; Standards Conformance: the product conforms to applicable standards, regulations, laws or ethics.'
+            item1: 'Hardware Compatibility: the product can be used with applicable configurations of hardware components.',
+            item2: 'Operating System Compatibility: the product can run on intended operating system versions, and follows typical behavior.',
+            item3: 'Application Compatibility: the product, and its data, works with other applications customers are likely to use.',
+            item4: 'Configuration Compatibility: product\'s ability to blend in with configurations of the environment.',
+            item5: 'Backward Compatibility: can the product do everything the last version could?',
+            item6: 'Forward Compatibility: will the product be able to use artifacts or interfaces of future versions?',
+            item7: 'Sustainability: effects on the environment, e.g. energy efficiency, switch-offs, power-saving modes, telecommuting.',
+            item8: 'Standards Conformance: the product conforms to applicable standards, regulations, laws or ethics.'
         },
         'Supportability': {
             desc: 'Can customers\' usage and problems be supported?',
-            item1: '&#x2022; Identifiers: is it easy to identify parts of the product and their versions, or specific errors?',
-            item2: '&#x2022; Diagnostics: is it possible to find out details regarding customer situations?',
-            item3: '&#x2022; Troubleshootable: is it easy to pinpoint errors (e.g. log files) and get help?',
-            item4: '&#x2022; Debugging: can you observe the internal states of the software when needed?',
-            item5: '&#x2022; Versatility: ability to use the product in more ways than it was originally designed for.'
+            item1: 'Identifiers: is it easy to identify parts of the product and their versions, or specific errors?',
+            item2: 'Diagnostics: is it possible to find out details regarding customer situations?',
+            item3: 'Troubleshootable: is it easy to pinpoint errors (e.g. log files) and get help?',
+            item4: 'Debugging: can you observe the internal states of the software when needed?',
+            item5: 'Versatility: ability to use the product in more ways than it was originally designed for.'
         },
         'Testability': {
             desc: 'Is it easy to check and test the product?',
-            item1: '&#x2022; Traceability: the product logs actions at appropriate levels and in usable format.',
-            item2: '&#x2022; Controllability: ability to independently set states, objects or variables.',
-            item3: '&#x2022; Observability: ability to observe things that should be tested.',
-            item4: '&#x2022; Monitorability: can the product give hints on what/how it is doing?',
-            item5: '&#x2022; Isolateability: ability to test a part by itself.',
-            item6: '&#x2022; Stability: changes to the software are controlled, and not too frequent.',
-            item7: '&#x2022; Automation: are there public or hidden programmatic interface that can be used?',
-            item8: '&#x2022; Information: ability for testers to learn what needs to be learned...',
-            item9: '&#x2022; Auditability: can the product and its creation be validated?'
+            item1: 'Traceability: the product logs actions at appropriate levels and in usable format.',
+            item2: 'Controllability: ability to independently set states, objects or variables.',
+            item3: 'Observability: ability to observe things that should be tested.',
+            item4: 'Monitorability: can the product give hints on what/how it is doing?',
+            item5: 'Isolateability: ability to test a part by itself.',
+            item6: 'Stability: changes to the software are controlled, and not too frequent.',
+            item7: 'Automation: are there public or hidden programmatic interface that can be used?',
+            item8: 'Information: ability for testers to learn what needs to be learned...',
+            item9: 'Auditability: can the product and its creation be validated?'
         },
         'Maintainability': {
             desc: 'Can the product be maintained and extended at low cost?',
-            item1: '&#x2022; Flexibility: the ability to change the product as required by customers.',
-            item2: '&#x2022; Extensibility: will it be easy to add features in the future?',
-            item3: '&#x2022; Simplicity: the code is not more complex than needed, and does not obscure test design, execution and evaluation.',
-            item4: '&#x2022; Readability: the code is adequately documented and easy to read and understand.',
-            item5: '&#x2022; Transparency: Is it easy to understand the underlying structures?',
-            item6: '&#x2022; Modularity: the code is split into manageable pieces.',
-            item7: '&#x2022; Refactorability: are you satisfied with the unit tests?',
-            item8: '&#x2022; Analyzability: ability to find causes for defects or other code of interest.'
+            item1: 'Flexibility: the ability to change the product as required by customers.',
+            item2: 'Extensibility: will it be easy to add features in the future?',
+            item3: 'Simplicity: the code is not more complex than needed, and does not obscure test design, execution and evaluation.',
+            item4: 'Readability: the code is adequately documented and easy to read and understand.',
+            item5: 'Transparency: Is it easy to understand the underlying structures?',
+            item6: 'Modularity: the code is split into manageable pieces.',
+            item7: 'Refactorability: are you satisfied with the unit tests?',
+            item8: 'Analyzability: ability to find causes for defects or other code of interest.'
         },
         'Portability': {
             desc: 'Is transferring of the product to different environments enabled?',
-            item1: '&#x2022; Reusability: can parts of the product be re-used elsewhere?',
-            item2: '&#x2022; Adaptability: is it easy to change the product to support a different environment?',
-            item3: '&#x2022; Compatibility: does the product comply with common interfaces or official standards?',
-            item4: '&#x2022; Internationalization: it is easy to translate the product.',
-            item5: '&#x2022; Localization: are all parts of the product adjusted to meet the needs of the targeted culture/country?',
-            item6: '&#x2022; User Interface-robustness: will the product look equally good when translated?'
+            item1: 'Reusability: can parts of the product be re-used elsewhere?',
+            item2: 'Adaptability: is it easy to change the product to support a different environment?',
+            item3: 'Compatibility: does the product comply with common interfaces or official standards?',
+            item4: 'Internationalization: it is easy to translate the product.',
+            item5: 'Localization: are all parts of the product adjusted to meet the needs of the targeted culture/country?',
+            item6: 'User Interface-robustness: will the product look equally good when translated?'
         }
     };
     var description = characteristicDescriptions[characteristic];
@@ -430,7 +430,7 @@ function setCharacteristicDescription(characteristic) {
                 descriptionText.innerHTML += description[key] + '\n\n';
                 isFirstIteration = false;
             } else {
-                descriptionText.innerHTML += '<div style="text-align: left;">' + description[key] + '</div>';
+                descriptionText.innerHTML += '<div style="text-align: left;">&#x2022; ' + description[key] + '</div>';
             }
         }
     }
